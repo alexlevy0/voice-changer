@@ -80,7 +80,8 @@ class MMVC_Rest:
                 "/upload_dir", StaticFiles(directory=f"{UPLOAD_DIR}"), name="static"
             )
 
-            if sys.platform.startswith("darwin"):
+            # if sys.platform.startswith("darwin"):
+            if sys.platform.startswith("darwin") and hasattr(sys, "_MEIPASS"):
                 p1 = os.path.dirname(sys._MEIPASS)
                 p2 = os.path.dirname(p1)
                 p3 = os.path.dirname(p2)
